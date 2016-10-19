@@ -1,0 +1,21 @@
+seeds:
+  stamen:
+    caches: [stamen_watercolor_cache]
+    grids: [WGS84]
+    coverages: [havanna]
+    levels:
+      from: 13
+      to: 15
+    refresh_before:
+      minutes: 1
+
+cleanups:
+  stamen:
+    caches: [stamen_watercolor_cache]
+    remove_all: true
+
+coverages:
+  havanna:
+    # bbox: [-82.94403076171875,22.6292225194605,-81.84402465820312,23.609295317664763]
+    bbox: [-82.396474,23.117549,-82.334676,23.148173]
+    srs: EPSG:4326

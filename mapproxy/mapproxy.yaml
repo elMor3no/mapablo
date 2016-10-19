@@ -1,0 +1,30 @@
+services:
+  tms:
+    use_grid_names: true
+
+layers:
+  - name: stamen.watercolor
+    title: Stamen Design Watercolor Style
+    sources: [stamen_watercolor_cache]
+
+caches:
+  stamen_watercolor_cache:
+    sources: [stamen_watercolor_tile]
+    grids: [WGS84]
+    link_single_color_images: true
+
+sources:
+  stamen_watercolor_tile:
+    type: tile
+    grid: WGS84
+    transparent: true
+    url: http://tile.stamen.com/watercolor/%(tms_path)s.jpg
+    seed_only: false
+    http:
+      client_timeout: 240
+
+grids:
+  WGS84:
+    srs: EPSG:4326
+    num_levels: 19
+    origin: nw
